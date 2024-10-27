@@ -1,0 +1,139 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+    --line-border-fill:#630cf1;
+    --line-border-empty:#383838;
+}
+*{
+    box-sizing: 0;
+    padding: 0;
+    margin: 0;
+
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    background-color:#f3f5f7 ;
+    font-family: "poppins",sans-serif;
+}
+.container{
+    width:100%;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-radius:5px ;
+    overflow-x: hidden;
+
+
+}
+
+.container .content h2{
+    font-size: 2rem;
+    color: var(--line-border-empty);
+    text-align: center;
+    padding: 2rem 0;
+    
+}.progress_container{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+
+ }.progress_container::before{
+    content: "";
+position: absolute;
+background-color: #ddd;
+height: 4px;
+width: 43%;
+margin-left: 29%;
+
+top: 20%;
+left: 0;
+z-index: 1;
+transform:translateY(-50%);
+} 
+.progress_co{
+    content: "";
+    position: absolute;
+    background-color: #ddd;
+    height: 39%; /* Set the height as needed */
+    width: 4px; /* Change width to create a thin line */
+    margin-left: 10%; /* Center the line horizontally */
+    top: 20%; /* Adjust the top position as needed */
+    left: 0; /* Remove this line */
+    z-index: 1;
+    transform: translateX(-50%); /* Center the line */
+    
+    
+    gap: 50px;
+    margin-top: 10%;
+} 
+.circle{
+background-color: #ddd;
+height: 30px;
+width: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+z-index: 1;}
+
+
+.circle.active{
+    border-color: var(--line-border-empty);
+    color:#fff;
+background-color: red;}
+.btns{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+
+} .btns .btn{
+   outline: none;
+   border: none;
+   cursor: pointer;
+   font-family: inherit;
+   font-size: 1rem;
+   border-radius: 4px;
+   background-color: red; 
+   color: #fff;
+   padding: 4px 40px;
+   margin-left: 430px;
+
+}.btn:active{
+    outline: none;
+    transform: scale(0.98);
+}.btns .btn .disabled{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 4px;
+    color: #000;
+    padding: 4px 40px;
+    background-color:#ddd;
+    cursor: not-allowed;
+}.sidebar {
+    position: relative; /* Sidebar positioning */
+    width: 80px; /* Adjust width */
+  }
+  
+  .sidebar-step {
+    display: flex;
+    flex-direction: column; /* Stack circles and lines */
+    align-items: center; /* Center items */
+    margin: 20px 0; /* Margin between steps */
+  }
+  .line {
+    width: 4px; /* Line width */
+    height: 50px; /* Line height */
+    background-color: #ccc; /* Default line color */
+    transition: background-color 0.3s; /* Transition for color change */
+  }
+  
+  .line.active {
+    background-color: red; /* Active line color */
+  }
+  

@@ -1,0 +1,42 @@
+/* Right.css */
+
+.sidebar {
+    position: relative; /* Sidebar positioning */
+    width: 80px; /* Adjust width */
+  }
+  
+  .sidebar-step {
+    display: flex;
+    flex-direction: column; /* Stack circles and lines */
+    align-items: center; /* Center items */
+    margin: 20px 0; /* Margin between steps */
+  }
+  
+  .circle {
+    width: 30px; /* Circle size */
+    height: 30px;
+    border-radius: 50%; /* Make it circular */
+    background-color: #ccc; /* Default circle color */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the number */
+    color: white; /* Number color */
+    font-weight: bold; /* Number weight */
+    transition: background-color 0.3s; /* Transition for color change */
+  }
+  
+  .circle.active {
+    background-color: red; /* Active circle color */
+  }
+  
+  .line {
+    width: 4px; /* Line width */
+    height: 50px; /* Line height */
+    background-color: #ccc; /* Default line color */
+    transition: background-color 0.3s; /* Transition for color change */
+  }
+  
+  .line.active {
+    background-color: red; /* Active line color */
+  }
+  
