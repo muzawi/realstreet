@@ -58,9 +58,9 @@ transform:translateY(-50%);
     content: "";
     position: absolute;
     background-color: #ddd;
-    height: 39%; /* Set the height as needed */
+    height:60%; /* Set the height as needed */
     width: 4px; /* Change width to create a thin line */
-    margin-left: 10%; /* Center the line horizontally */
+    margin-left: 13%; /* Center the line horizontally */
     top: 20%; /* Adjust the top position as needed */
     left: 0; /* Remove this line */
     z-index: 1;
@@ -130,10 +130,14 @@ background-color: red;}
     width: 4px; /* Line width */
     height: 50px; /* Line height */
     background-color: #ccc; /* Default line color */
-    transition: background-color 0.3s; /* Transition for color change */
+    transition: background-color 0.3s; 
+    background-color: red;/* Transition for color change */
   }
   
-  .line.active {
-    background-color: red; /* Active line color */
+  .tick {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   

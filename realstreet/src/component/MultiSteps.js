@@ -118,6 +118,14 @@ const Form6 = () => (
 );
 
 const forms = [Form1, Form2, Form3, Form4, Form5, Form6];
+const formLabels = [
+  "Add Requirements",
+  "Property Location",
+  "Property Features",
+  "Area Details",
+  "Price Details",
+  "Add Photos",
+];
 
 const MultiSteps = () => {
   const [step, setStep] = useState(1);
@@ -134,18 +142,103 @@ const MultiSteps = () => {
   return (
     <div className="container">
       <div className="progress_container">
-        {forms.map((_, index) => (
-          <div key={index} className={`circle ${index < step ? "active" : ""}`}>
-            {index + 1}
+      {forms.map((_, index) => (
+          <div
+            key={index}
+            className="circle"
+            style={{
+              backgroundColor: index < step ? "red" : "#ddd",
+              border: `2px solid ${index < step ? "red" : "white"}`,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative", // Required for positioning the tick
+            }}
+          >
+            {index < step ? (
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                className="tick"
+                style={{ position: "absolute" }}
+              >
+                <path
+                  d="M13.485 1.85L5.5 12.828 2.515 9.757a1 1 0 0 0-1.415 1.414l4 4a1 1 0 0 0 1.415 0l8.5-11a1 1 0 0 0-1.415-1.414z"
+                  fill="white"
+                />
+              </svg>
+            ) : (
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="tick"
+                style={{ position: "absolute" }}
+              >
+                <path
+                  d="M13.485 1.85L5.5 12.828 2.515 9.757a1 1 0 0 0-1.415 1.414l4 4a1 1 0 0 0 1.415 0l8.5-11a1 1 0 0 0-1.415-1.414z"
+                  fill="white"
+                  style={{ opacity: 0.5 }} // White tick with transparency for uncompleted steps
+                />
+              </svg>
+            )}
           </div>
         ))}
       </div>
-      <div className="progress_co" >
-        {forms.map((_, index) => (
-          <div style={{marginBottom:"500%",marginLeft:"-250%"}} key={index} className={`circle ${index < step ? "active" : ""}`}>
-            {index + 1}
+      <div className="progress_co"  >
+      {forms.map((_, index) => (
+          <div
+            key={index}
+            className="circle"
+            style={{
+              backgroundColor: index < step ? "blue" : "#ddd",
+              border: `2px solid ${index < step ? "white" : "white"}`,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+             // Required for positioning the tick
+             marginBottom:"50px",
+             marginLeft:"-12px"
+            }}
+          >
+            {index < step ? (
+              <svg
+                
+                fill="blue"
+                
+              >
+                <path
+                  d="M13.485 1.85L5.5 12.828 2.515 9.757a1 1 0 0 0-1.415 1.414l4 4a1 1 0 0 0 1.415 0l8.5-11a1 1 0 0 0-1.415-1.414z"
+                  fill="white"
+                />
+              </svg>
+            ) : (
+              <svg
+                
+                fill="none"
+                
+              >
+                <path
+                  d="M13.485 1.85L5.5 12.828 2.515 9.757a1 1 0 0 0-1.415 1.414l4 4a1 1 0 0 0 1.415 0l8.5-11a1 1 0 0 0-1.415-1.414z"
+                  fill="white"
+                  style={{ opacity: 0.5 }} // White tick with transparency for uncompleted steps
+                />
+              </svg>
+            )}
+
+<div style={{ marginTop: "80px",fontSize:"14px",marginLeft:"120px",marginBottom:"55px", textAlign: "center", color: index < step ? "black" : "black" }}>
+              {formLabels[index]}
+            </div>
           </div>
+          
         ))}
+        
       </div>
       
       <div className="content" style={{ border: "2px solid blue", padding: "20px", marginTop: "50px", maxWidth: "600px" ,borderRadius:"5%",backgroundColor:" #ddd"}}>
